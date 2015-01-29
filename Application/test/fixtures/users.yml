@@ -13,9 +13,9 @@ two: {}
 user:
   id: 1
   username: sven
-  password: $htrgrdfs
+  password_digest: $htrgrdfs
 
 kalle:
   id: 2
   username: kalle
-  password: $gbffsdcscxsx
+  password_digest: $gbffsdcscxsx

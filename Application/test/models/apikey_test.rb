@@ -6,11 +6,11 @@ class ApikeyTest < ActiveSupport::TestCase
    user = User.new
 
    apikey.user = user
+   user.username = 'haoj'
+   user.password = '$gthfvffgbf'
 
    apikey.key = '$hgfgbvfvd'
 
-   user.username = 'haoj'
-   user.password = '$gthfvffgbf'
 
    assert apikey.save
  end
@@ -20,5 +20,11 @@ class ApikeyTest < ActiveSupport::TestCase
     apikey.key = 'thgrverf'
 
     assert_not apikey.save
+  end
+
+  test 'should generate an APIKey' do
+    apikey = Apikey.new
+    key = apikey.generate_api_key
+    assert_equal(50, key.length)
   end
 end
