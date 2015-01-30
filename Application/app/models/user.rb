@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
   has_one :apikey
-  validates :username, length: {in: 3..50}, uniqueness: true
+  validates_length_of :username, within: 3..50, :message => '^Användarnamnet måste vara mellan 3-50 tecken'
+  validates_uniqueness_of :username, message: '^Användarnamnet är upptaget'
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 255 },
-            format: { with: VALID_EMAIL_REGEX },
-            uniqueness: { case_sensitive: false }
+  validates_length_of :email, maximum: 255, :message => 'Emailadressen får max vara 255 tecken'
+  validates_format_of :email, with: VALID_EMAIL_REGEX, message: '^Ogiltlig email'
+  validates_uniqueness_of :email, case_sensitive: false, message: '^Det finns redan en användare med angiven email'
   has_secure_password
-  validates :password, length: { minimum: 6 }
-  before_save { self.email = email.downcase! }
+  validates_length_of :password, minimum: 6, message: '^Lösenordet måste vara minst 6 tecken'
+  before_save { self.username = username.downcase! }
 end

@@ -1,0 +1,26 @@
+<% content_for :title do %>
+    FångstRapport - Logga in
+<% end %>
+
+<div class="jumbotron">
+  <h1>Välkommen till  API Registrering</h1>
+  <h3>Var vänlig logga in</h3>
+  <h4>Har du inget konto?</h4>
+  <%= link_to 'Registrera dig',  new_user_path,  class: 'btn btn-primary' %>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+        <%= f.label :username, 'Användarnamn' %>
+        <%= f.text_field :username, class: 'form-control' %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+        <br />
+        <%= f.submit 'Log in', class: 'btn btn-primary' %>
+    <% end %>
+
+  </div>
+</div>
