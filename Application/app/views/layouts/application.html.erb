@@ -7,6 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+  <div class="row">
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class=" navbar-collapse collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'API Dokumentation', '#' %></li>
+            <li><%= link_to 'Kontakta Oss', '#' %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
 <div class="container container-fluid">
   <%= yield %>
 </div>

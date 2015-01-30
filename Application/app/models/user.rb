@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates_length_of :email, maximum: 255, :message => 'Emailadressen får max vara 255 tecken'
   validates_format_of :email, with: VALID_EMAIL_REGEX, message: '^Ogiltlig email'
   validates_uniqueness_of :email, case_sensitive: false, message: '^Det finns redan en användare med angiven email'
-  has_secure_password
+  has_secure_password validations: false
   validates_length_of :password, minimum: 6, message: '^Lösenordet måste vara minst 6 tecken'
-  before_save { self.username = username.downcase! }
+ # before_save { self.username = username.downcase! }
 end

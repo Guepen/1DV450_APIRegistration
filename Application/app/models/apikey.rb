@@ -7,6 +7,6 @@ class Apikey < ActiveRecord::Base
   validates :key, presence: true, uniqueness: true
 
   def generate_api_key
-    SecureRandom.hex(25)
+    self.key = SecureRandom.hex(25)
   end
 end
