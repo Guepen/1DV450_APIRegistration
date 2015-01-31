@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body { padding-top: 70px; }
+
 #error_explanation {
   color: red;
   ul {
@@ -14,4 +16,16 @@
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.grey {
+  background-color: gainsboro;
+  padding-top: 45px;
+}
+
+.logOut{
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }

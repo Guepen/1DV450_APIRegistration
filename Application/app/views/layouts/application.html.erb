@@ -2,15 +2,18 @@
 <html>
 <head>
   <title><%= yield(:title) %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-  <div class="row">
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container container-fluid">
+<div class="row">
+  <div class="container">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -20,10 +23,17 @@
           </button>
         </div>
         <div class=" navbar-collapse collapse" id="navbar">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav ">
             <li><%= link_to 'API Dokumentation', '#' %></li>
             <li><%= link_to 'Kontakta Oss', '#' %></li>
           </ul>
+          <div class="navbar-right">
+            <% if is_logged_in? %>
+                <p class="navbar-text"><strong><%= yield(:screen_name) %></strong></p>
+                <%= link_to 'Logga ut', logout_path, class: 'btn btn-danger logOut' %>
+
+            <% end %>
+          </div>
         </div>
       </div>
     </nav>
