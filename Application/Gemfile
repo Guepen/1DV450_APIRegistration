@@ -31,10 +31,12 @@ gem 'bootstrap-sass'
 gem 'spring',        group: :development
 
 gem 'custom_error_message', '~> 1.1.1'
-
+gem 'devise'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use unicorn as the app server
 # gem 'unicorn'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
