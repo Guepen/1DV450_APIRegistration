@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  include SessionsHelper
+  before_action :check_user, only: [:show]
+  before_action :correct_user, only: [:show]
+
   def new
     @user = User.new
   end
@@ -19,12 +23,19 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     apikey = Apikey.find_by_user_id(@user.id)
-    @key = apikey.key
+    if apikey
+      @key = apikey.key
+    end
   end
 
   private
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to user_path(current_user) unless current_user == @user
   end
 end

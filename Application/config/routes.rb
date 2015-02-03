@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
    get '/logout' => 'sessions#destroy'
 
+  get '/apikeys/destroy/:id' => 'apikeys#destroy', :as  => 'apikeys_destroy'
+  get '/apikeys/generate/:id' => 'apikeys#generate', :as => 'apikeys_generate'
+
    resources :users, only: [:new, :create, :show]
 
   # Example of regular route:

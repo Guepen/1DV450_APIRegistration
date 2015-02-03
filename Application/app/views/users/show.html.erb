@@ -19,7 +19,11 @@
             <p>Läs mer om detta i <a href="#" target="_blank">dokumentationen</a></p>
           </div>
           <div class="panel-footer">
-            <a class="btn btn-danger">Avregistrera din API-nyckel</a>
+            <% if @key %>
+            <%= link_to 'Avregistrera din API-nyckel', apikeys_destroy_path(@user.id), :class => 'btn btn-danger' %>
+            <% else %>
+              <%= link_to 'Registrera API-nyckel', apikeys_generate_path(@user.id), :class => 'btn btn-success' %>
+              <% end %>
           </div>
         </div>
       </div>
