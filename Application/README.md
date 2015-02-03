@@ -2,8 +2,7 @@ README
 ======
 
 
-### Om du vill forka/ladda ner det här repot och köra applikationen lokalt i din egna maskin bör du
-### se till att gå igenom nedanstående steg för att du skall kunna komma igång så fort som möjligt
+### Om du vill forka/ladda ner det här repot och köra applikationen lokalt i din egna maskin bör du se till att gå igenom nedanstående steg för att du skall kunna komma igång så fort som möjligt
 
     * Ruby version: 2.1.5p273
 
