@@ -6,6 +6,8 @@ README
 
     * Ruby version: 2.1.5p273
 
+    * Rails version: 4.1.8
+
     * System beroenden: Se till att att alla GEMs är installerade genom att köra bundle install.
       Om du gör detta från en windows maskin kan du komma att behöva byta ut sourcen https://rubygems.org
       till http://rubygems.org för att alla GEMs skall kunna installeras

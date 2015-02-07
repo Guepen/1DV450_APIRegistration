@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150201190324) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email"
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "apikeys", force: true do |t|
