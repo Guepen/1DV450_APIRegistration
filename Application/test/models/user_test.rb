@@ -109,18 +109,4 @@ class UserTest < ActiveSupport::TestCase
 
   end
 
-  test 'Should get the users screen_name' do
-    user = User.create
-    user.username = 'TestUser'
-    assert_equal user.screen_name, 'TestUser'
-  end
-
-  test 'should get the users API_key' do
-    user = User.new
-    apikey = Apikey.new
-    apikey.key = 'nrtgffgd05dscs'
-    user.apikey = apikey
-
-    assert_equal user.api_key, 'nrtgffgd05dscs'
-  end
 end

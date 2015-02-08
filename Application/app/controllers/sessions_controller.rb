@@ -1,6 +1,7 @@
 
 class SessionsController < ApplicationController
   include SessionsHelper
+  before_action :stay_on_user_page, only: [:new, :create]
 
   def new
 

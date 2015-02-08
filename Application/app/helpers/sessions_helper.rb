@@ -24,4 +24,10 @@ module SessionsHelper
     end
   end
 
+  def stay_on_user_page
+    if is_logged_in?
+      redirect_to current_user
+    end
+  end
+
 end
