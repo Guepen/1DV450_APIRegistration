@@ -27,5 +27,5 @@ README
       Logga in med användarnamnet tester och och lösenordet qwerty
 
     * Logga in som Admin: gå till http://localhost:3000/admin
-      logga in med admin@example.com och password
+      logga in med användarnamnet admin@example.com och lösenordet password
 
